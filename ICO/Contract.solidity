@@ -71,7 +71,7 @@ contract SmartOToken is Ownable, ERC20Interface {
   string public constant name = "STO";
   string public constant symbol = "STO";
   uint public constant decimals = 18;
-  uint256 public constant initialSupply = 18000000000 * 1 ether;
+  uint256 public constant initialSupply = 12000000000 * 1 ether;
   uint256 public totalSupply;
 
   /* This creates an array with all balances */
