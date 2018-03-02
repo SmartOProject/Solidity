@@ -205,7 +205,7 @@ contract Crowdsale is Ownable {
 
     require(msg.sender != 0x0);
     require(saleIsActive);
-    require(msg.value >= 0.01 * 1 ether);
+    require(msg.value >= 0.1 * 1 ether);
 
     uint256 weiAmount = msg.value;
 
