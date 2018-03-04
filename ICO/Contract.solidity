@@ -168,7 +168,7 @@ contract Crowdsale is Ownable {
     require(_targetWallet != 0x0);
 
     //Init
-    token = new SmarOToken();
+    token = new SmartOToken();
     rate = _initialRate;
     wallet = _targetWallet;
     saleIsActive = true;
