@@ -1,4 +1,4 @@
-pragma solidity ^0.4.15;
+pragma solidity ^0.4.18;
 
 /**
  * @title SafeMath
@@ -161,14 +161,14 @@ contract Crowdsale is Ownable {
 
   /* -----------   A D M I N        F U N C T I O N S    ----------- */
 
-  function Crowdsale(uint256 _initialRate, address _targetWallet) public {
+  function Crowdsale(uint256 _initialRate, address _targetWallet, address _token) public {
 
     //Checks
     require(_initialRate > 0);
     require(_targetWallet != 0x0);
 
     //Init
-    token = new SmartOToken();
+    token = _token;
     rate = _initialRate;
     wallet = _targetWallet;
     saleIsActive = true;
