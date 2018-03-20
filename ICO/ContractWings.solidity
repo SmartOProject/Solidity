@@ -387,7 +387,7 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
 }
 
 
-contract Crowdsale is Ownable, BasicCrowdsale {
+contract Crowdsale is BasicCrowdsale {
 
   using SafeMath for uint256;
 
