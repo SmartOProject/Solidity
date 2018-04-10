@@ -70,6 +70,13 @@ contract SmatrOCrowdsale is BasicCrowdsale {
 
 // Here go crowdsale process itself and token manipulations
 
+  function setRate(uint256 _tokensPerEthPrice)
+    public
+    onlyOwner
+  {
+    tokensPerEthPrice = _tokensPerEthPrice;
+  }
+
   // default function allows for ETH transfers to the contract
   function () payable public {
     require(msg.value >= 0.1 * 1 ether);
