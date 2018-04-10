@@ -16,7 +16,7 @@ contract SmatrOCrowdsale is BasicCrowdsale {
 
   // Ctor. In this example, minimalGoal, hardCap, and price are not changeable.
   // In more complex cases, those parameters may be changed until start() is called.
-  function CustomCrowdsale(
+  function SmatrOCrowdsale(
     uint256 _minimalGoal,
     uint256 _hardCap,
     uint256 _tokensPerEthPrice,
@@ -31,7 +31,7 @@ contract SmatrOCrowdsale is BasicCrowdsale {
     minimalGoal = _minimalGoal;
     hardCap = _hardCap;
     tokensPerEthPrice = _tokensPerEthPrice;
-    crowdsaleToken = CustomTokenExample(_token);
+    crowdsaleToken = SmartOToken(_token);
   }
 
 // Here goes ICrowdsaleProcessor implementation
@@ -72,7 +72,7 @@ contract SmatrOCrowdsale is BasicCrowdsale {
 
   // default function allows for ETH transfers to the contract
   function () payable public {
-    require(msg.value > 0);
+    require(msg.value >= 0.1 * 1 ether);
 
     // and it sells the token
     sellTokens(msg.sender, msg.value);
